@@ -1,0 +1,129 @@
+ body {
+        font-family: poppins;
+        margin: 0;
+         overflow: hidden;
+        background-image: radial-gradient(#258001, #1b5e01);
+        background-repeat: no-repeat;
+        height: 100%;
+        color: white;
+    }
+
+    #saldo_overview {
+        display: flex;
+        background-color: darkred;
+        position: fixed;
+        width: 100vw;
+        justify-content: space-between;   
+        color: yellow;
+        font-weight: bolder;
+    }
+
+    #first {
+        margin-top: 50px;
+    }
+
+    input.saldo_ophogen {
+        width: 50px;
+    }
+
+    #container_saldo {
+    float: right;
+    display: flex;
+    margin-right: 10px;
+    }
+    
+    p {
+        margin: 0;
+    }
+    
+    #inzet {
+        border: 5px dashed red;
+        background-color: yellow;
+        color: green;
+        width: 50px;
+        height: 30px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    #getallen {
+        display: flex;
+        margin-left: 25px;
+    }
+
+    #getallen>div:nth-child(1) {
+            border: 2px solid white;
+            padding: 5px;
+            width: 5vw;
+            justify-content: center;
+            align-content: center;
+            display: flex;
+    }
+
+    input[type="radio"] {
+     display: none;
+    }
+
+    input[type="radio"]+label {
+       padding: 25px;
+       border: 3px solid white;
+       border-radius: 360px;
+       font-size: 24px;
+       font-weight: bolder;
+       display: inline-block;
+       width: 7vw;
+       text-align: center;
+    }
+
+    #nul {
+       height: 7vh;
+       align-self: center;
+    }
+
+    input[type="radio"]:checked+label  {
+       color: green;
+    }
+
+    #container_table_rows>div {
+        display: flex;
+    }
+
+    #container_table_rows>div>div {
+        border: 2px solid white;
+        padding: 5px;
+        width: 5vw;
+        justify-content: center;
+        align-content: center;
+        display: flex;
+    }
+
+    .black {background-color: black}
+    .red {background-color: red;}
+
+    #uitkomst {
+        font-size: 36px;
+        width: 50px;
+        text-align: center;
+        color: yellow;
+        background-color: red;
+        padding: 20px;
+    }
+    
+    #speelbutton {
+        display: block;
+        color: yellow;
+        background-color: red;
+        padding: 10px 0;
+        width: 200px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bolder;
+    }
+
+@media screen and (max-width: 1820px) {
+        input[type="radio"]+label {
+            padding: 5px;
+            border: 1px solid white;
+        }
+    }
