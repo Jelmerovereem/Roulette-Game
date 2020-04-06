@@ -76,3 +76,28 @@ function audioPause() {
 
 play.addEventListener('click', audioPlay);
 pause.addEventListener('click', audioPause);
+
+
+var timersCount = 0, stopped = false, count, counter; // make count, counter global variables so buttons can access them
+var timerCounter = setInterval(countTimers, 30000);
+countTimers(); // run countTimers once to start
+
+function timer() {
+  count = count-1;
+  document.getElementById("timer").innerHTML=count;
+  if(count <= 0) {
+    clearInterval(counter);
+    return;
+  }
+}
+
+function countTimers() {
+  timersCount++;
+
+
+  count = 30;
+  counter = setInterval(timer, 1000);
+
+}
+
+speelbutton.addEventListener

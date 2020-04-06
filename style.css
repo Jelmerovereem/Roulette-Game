@@ -1,7 +1,7 @@
  body {
         font-family: poppins;
         margin: 0;
-         overflow: hidden;
+         /* overflow: hidden; */
         background-image: radial-gradient(#258001, #1b5e01);
         background-repeat: no-repeat;
         height: 100%;
@@ -18,9 +18,6 @@
         font-weight: bolder;
     }
 
-    #first {
-        margin-top: 50px;
-    }
 
     input.saldo_ophogen {
         width: 50px;
@@ -29,11 +26,17 @@
     #container_saldo {
     float: right;
     display: flex;
-    margin-right: 10px;
+    margin-right: 40px;
     }
     
     p {
         margin: 0;
+    }
+
+    #container_inzet_timer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
     }
     
     #inzet {
@@ -44,6 +47,10 @@
         height: 30px;
         font-size: 18px;
         text-align: center;
+    }
+
+    #timer {
+        margin-right: 100px;
     }
 
     #getallen {
