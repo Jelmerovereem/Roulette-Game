@@ -4,8 +4,13 @@
          /* overflow: hidden; */
         background-image: radial-gradient(#258001, #1b5e01);
         background-repeat: no-repeat;
-        height: 100%;
+        height: 1080px;
         color: white;
+    }
+
+    #play, #playMix, #pause {
+        color: white;
+        text-decoration: none;
     }
 
     #saldo_overview {

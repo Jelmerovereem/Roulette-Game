@@ -1,221 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Roulette Game</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
-
-<body>
-    <div id="saldo_overview">
-        <form action="_" id="saldoFormulier">
-            <label class="saldo_ophogen" for="saldoInput">Saldo ophogen met:</label>
-
-            <input type="number" min="1" id="saldoInput" class="saldo_ophogen" placeholder="0">
-            <br>
-            <button type="submit">Ophogen</button>
+    <head>
+        <meta charset="UTF-8">
+        <title>Roulette Game</title>
+        <link rel="stylesheet" href="style/style.css">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <!-- Hier zie je je saldo en kan je je saldo ophogen -->
+        <div id="saldo_overview">
+            <form action="_" id="saldoFormulier">
+                <label class="saldo_ophogen" for="saldoInput">Saldo ophogen met:</label>
+                <input type="number" min="1" id="saldoInput" class="saldo_ophogen" placeholder="0">
+                <br>
+                <button type="submit">Ophogen</button>
+            </form>
+            <!-- Audio play en pause -->
+            <div>
+                <a id="play" href="#">Play Casino</a>
+                <a id="playMix" href="#">Play Mix</a>
+                <a id="pause" href="#">Pause</a>
+            </div>
+            <!-- Je actuele saldo -->
+            <div id="container_saldo">
+                <label for="currentSaldo">saldo:€</label>
+                <p id="currentSaldo">0</p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <!-- hier kan je je inzet invoeren -->
+        <div id="container_inzet_timer">
+            <form id="first" action="_">
+                <label for="inzet">Inzet: €</label>
+                <input min="0" type="number" id="inzet" value="0">
+            </form>
+        </div>
+        <br>
+        <br>
+        <!-- Het speelbord, hier kies je een getal -->
+        <label for="getallen">Getallen:</label>
+        <form id="getallen" action="_" method="get">
+            <div>
+                <input type="radio" name="nummer" id="0" value="0">
+                <label id="nul" for="0">0</label>
+            </div>
+            <div id="container_table_rows">
+                <div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="3" value="3">
+                        <label for="3">3</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="6" value="6">
+                        <label for="6">6</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="9" value="9">
+                        <label for="9">9</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="12" value="12">
+                        <label for="12">12</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="15" value="15">
+                        <label for="15">15</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="18" value="18">
+                        <label for="18">18</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="21" value="21">
+                        <label for="21">21</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="24" value="24">
+                        <label for="24">24</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="27" value="27">
+                        <label for="27">27</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="30" value="30">
+                        <label for="30">30</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="33" value="33">
+                        <label for="33">33</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="36" value="36">
+                        <label for="36">36</label>
+                    </div>
+                </div>
+                <div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="2" value="2">
+                        <label for="2">2</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="5" value="5">
+                        <label for="5">5</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="8" value="8">
+                        <label for="8">8</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="11" value="11">
+                        <label for="11">11</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="14" value="14">
+                        <label for="14">14</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="17" value="17">
+                        <label for="17">17</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="20" value="20">
+                        <label for="20">20</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="23" value="23">
+                        <label for="23">23</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="26" value="26">
+                        <label for="26">26</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="29" value="29">
+                        <label for="29">29</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="32" value="32">
+                        <label for="32">32</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="35" value="35">
+                        <label for="35">35</label>
+                    </div>
+                </div>
+                <div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="1" value="1">
+                        <label for="1">1</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="4" value="4">
+                        <label for="4">4</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="7" value="7">
+                        <label for="7">7</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="10" value="10">
+                        <label for="10">10</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="13" value="13">
+                        <label for="13">13</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="16" value="16">
+                        <label for="16">16</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="19" value="19">
+                        <label for="19">19</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="22" value="22">
+                        <label for="22">22</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="25" value="25">
+                        <label for="25">25</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="28" value="28">
+                        <label for="28">28</label>
+                    </div>
+                    <div class="black">
+                        <input type="radio" name="nummer" id="31" value="31">
+                        <label for="31">31</label>
+                    </div>
+                    <div class="red">
+                        <input type="radio" name="nummer" id="34" value="34">
+                        <label for="34">34</label>
+                    </div>
+                </div>
+            </div>
         </form>
-        <div>
-            <a id="play" href="#">Play</a>
-            <a id="pause" href="#">Pause</a>
-        </div>
-        <div id="container_saldo">
-            <label for="currentSaldo">saldo:€</label>
-            <p id="currentSaldo">0</p>
-        </div>
-    </div>
-    <br>
-    <br>
-    <div id="container_inzet_timer">
-    <form id="first" action="_">
-        <label for="inzet">Inzet: €</label>
-        <input min="0" type="number" id="inzet" value="0">
-    </form>
-    <p id="timer">0</p>
-    </div>
-    <br>
-    <br>
-    <label for="getallen">Getal(len):</label>
+        <br>
+        <br>
+        <!-- Hier komt het gevallen nummer -->
+        <label for="">Gevallen op nummer:</label>
+        <p id="uitkomst">-</p>
+        <br>
+        <!-- De speelbutton -->
+        <a id="speelbutton" href="#/">speel</a>
+        <br>
+        <br>
+        <!-- Hier de feedback hoeveel winst of verlies je hebt -->
+        <p id="feedback">Feedback</p>
+        <p id="winst">-</p>
+        <script src="script/script.js"></script>
+    <audio id="Myaudio" src="https://oege.ie.hva.nl/~overeej2/Roulette%20Casino/audio/background.mp3"></audio>
 </body>
-<form id="getallen" action="_" method="get">
-    <div>
-        <input type="radio" name="nummer" id="0" value="0">
-        <label id="nul" for="0">0</label>
-    </div>
-    <div id="container_table_rows">
-        <div>
-            <div class="red">
-                <input type="radio" name="nummer" id="3" value="3">
-                <label for="3">3</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="6" value="6">
-                <label for="6">6</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="9" value="9">
-                <label for="9">9</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="12" value="12">
-                <label for="12">12</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="15" value="15">
-                <label for="15">15</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="18" value="18">
-                <label for="18">18</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="21" value="21">
-                <label for="21">21</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="24" value="24">
-                <label for="24">24</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="27" value="27">
-                <label for="27">27</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="30" value="30">
-                <label for="30">30</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="33" value="33">
-                <label for="33">33</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="36" value="36">
-                <label for="36">36</label>
-            </div>
-        </div>
-        <div>
-            <div class="black">
-                <input type="radio" name="nummer" id="2" value="2">
-                <label for="2">2</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="5" value="5">
-                <label for="5">5</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="8" value="8">
-                <label for="8">8</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="11" value="11">
-                <label for="11">11</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="14" value="14">
-                <label for="14">14</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="17" value="17">
-                <label for="17">17</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="20" value="20">
-                <label for="20">20</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="23" value="23">
-                <label for="23">23</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="26" value="26">
-                <label for="26">26</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="29" value="29">
-                <label for="29">29</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="32" value="32">
-                <label for="32">32</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="35" value="35">
-                <label for="35">35</label>
-            </div>
-        </div>
-        <div>
-            <div class="red">
-                <input type="radio" name="nummer" id="1" value="1">
-                <label for="1">1</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="4" value="4">
-                <label for="4">4</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="7" value="7">
-                <label for="7">7</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="10" value="10">
-                <label for="10">10</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="13" value="13">
-                <label for="13">13</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="16" value="16">
-                <label for="16">16</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="19" value="19">
-                <label for="19">19</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="22" value="22">
-                <label for="22">22</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="25" value="25">
-                <label for="25">25</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="28" value="28">
-                <label for="28">28</label>
-            </div>
-            <div class="black">
-                <input type="radio" name="nummer" id="31" value="31">
-                <label for="31">31</label>
-            </div>
-            <div class="red">
-                <input type="radio" name="nummer" id="34" value="34">
-                <label for="34">34</label>
-            </div>
-        </div>
-    </div>
-
-</form>
-<br>
-<br>
-<label for="">Gevallen op nummer:</label>
-<p id="uitkomst">-</p>
-<br>
-
-<a id="speelbutton" href="#/">speel</a>
-<br>
-<br>
-<p id="feedback">Feedback</p>
-<p id="winst">winst</p>
-<br>
-<label for="saldo">saldo</label>
-<p id="saldo">-</p>
-<script src="script.js"></script>
-<audio id="Myaudio" src="https://oege.ie.hva.nl/~overeej2/Roulette%20Casino/audio/background.mp3"></audio>
-</body>
-
 </html>
