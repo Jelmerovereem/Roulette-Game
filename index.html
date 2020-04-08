@@ -18,10 +18,10 @@
                 <button type="submit">Ophogen</button>
             </form>
             <!-- Audio play en pause -->
-            <div>
-                <a id="play" href="#">Play Casino</a>
-                <a id="playMix" href="#">Play Mix</a>
-                <a id="pause" href="#">Pause</a>
+            <div class="audioDiv">
+                <a id="play" href="#">▶ Casino</a>
+                <a id="playMix" href="#">▶ Mix</a>
+                <a id="pause" href="#">| | Pause</a>
             </div>
             <!-- Je actuele saldo -->
             <div id="container_saldo">
@@ -39,162 +39,179 @@
             </form>
         </div>
         <br>
+        <input type="radio" name="fiche" id="fiche1" value="1">
+        <label for="fiche1"><svg width="60" height="60" viewBox="0 0 60 60" id="fiche1Label" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="60" height="60">
+<circle cx="30" cy="30" r="29.5" fill="#F82F2F" stroke="black"/>
+</mask>
+<g mask="url(#mask0)">
+<circle cx="30" cy="30" r="30" fill="#E04141"/>
+<path d="M9 7.26997L19.2317 1L24.9792 10.3791L14.7475 16.649L9 7.26997Z" fill="white"/>
+<path d="M50.8215 53.379L40.5899 59.649L34.8424 50.27L45.0741 44L50.8215 53.379Z" fill="white"/>
+<path d="M40.3158 1L50.8215 6.79902L45.5058 16.4293L35 10.6303L40.3158 1Z" fill="white"/>
+<path d="M19.5058 59.649L9.00001 53.85L14.3158 44.2197L24.8216 50.0187L19.5058 59.649Z" fill="white"/>
+<path d="M61 24L61 36L50 36L50 24L61 24Z" fill="white"/>
+<path d="M0 36L-5.24537e-07 24L11 24L11 36L0 36Z" fill="white"/>
+<path d="M28.156 26.56V25.54H30.58V34H29.428V26.56H28.156Z" fill="white"/>
+</g>
+</svg>
+</label>
         <br>
         <!-- Het speelbord, hier kies je een getal -->
         <label for="getallen">Getallen:</label>
         <form id="getallen" action="_" method="get">
             <div>
-                <input type="radio" name="nummer" id="0" value="0">
+                <input type="radio" id="0" value="0">
                 <label id="nul" for="0">0</label>
             </div>
             <div id="container_table_rows">
                 <div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="3" value="3">
+                        <input type="radio" id="3" value="3">
                         <label for="3">3</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="6" value="6">
+                        <input type="radio" id="6" value="6">
                         <label for="6">6</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="9" value="9">
+                        <input type="radio" id="9" value="9">
                         <label for="9">9</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="12" value="12">
+                        <input type="radio" id="12" value="12">
                         <label for="12">12</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="15" value="15">
+                        <input type="radio" id="15" value="15">
                         <label for="15">15</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="18" value="18">
+                        <input type="radio" id="18" value="18">
                         <label for="18">18</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="21" value="21">
+                        <input type="radio" id="21" value="21">
                         <label for="21">21</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="24" value="24">
+                        <input type="radio" id="24" value="24">
                         <label for="24">24</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="27" value="27">
+                        <input type="radio" id="27" value="27">
                         <label for="27">27</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="30" value="30">
+                        <input type="radio" id="30" value="30">
                         <label for="30">30</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="33" value="33">
+                        <input type="radio" id="33" value="33">
                         <label for="33">33</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="36" value="36">
+                        <input type="radio" id="36" value="36">
                         <label for="36">36</label>
                     </div>
                 </div>
                 <div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="2" value="2">
+                        <input type="radio" id="2" value="2">
                         <label for="2">2</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="5" value="5">
+                        <input type="radio" id="5" value="5">
                         <label for="5">5</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="8" value="8">
+                        <input type="radio" id="8" value="8">
                         <label for="8">8</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="11" value="11">
+                        <input type="radio" id="11" value="11">
                         <label for="11">11</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="14" value="14">
+                        <input type="radio" id="14" value="14">
                         <label for="14">14</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="17" value="17">
+                        <input type="radio" id="17" value="17">
                         <label for="17">17</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="20" value="20">
+                        <input type="radio" id="20" value="20">
                         <label for="20">20</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="23" value="23">
+                        <input type="radio" id="23" value="23">
                         <label for="23">23</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="26" value="26">
+                        <input type="radio" id="26" value="26">
                         <label for="26">26</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="29" value="29">
+                        <input type="radio" id="29" value="29">
                         <label for="29">29</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="32" value="32">
+                        <input type="radio" id="32" value="32">
                         <label for="32">32</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="35" value="35">
+                        <input type="radio" id="35" value="35">
                         <label for="35">35</label>
                     </div>
                 </div>
                 <div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="1" value="1">
+                        <input type="radio" id="1" value="1">
                         <label for="1">1</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="4" value="4">
+                        <input type="radio" id="4" value="4">
                         <label for="4">4</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="7" value="7">
+                        <input type="radio" id="7" value="7">
                         <label for="7">7</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="10" value="10">
+                        <input type="radio" id="10" value="10">
                         <label for="10">10</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="13" value="13">
+                        <input type="radio" id="13" value="13">
                         <label for="13">13</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="16" value="16">
+                        <input type="radio" id="16" value="16">
                         <label for="16">16</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="19" value="19">
+                        <input type="radio" id="19" value="19">
                         <label for="19">19</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="22" value="22">
+                        <input type="radio" id="22" value="22">
                         <label for="22">22</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="25" value="25">
+                        <input type="radio" id="25" value="25">
                         <label for="25">25</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="28" value="28">
+                        <input type="radio" id="28" value="28">
                         <label for="28">28</label>
                     </div>
                     <div class="black">
-                        <input type="radio" name="nummer" id="31" value="31">
+                        <input type="radio" id="31" value="31">
                         <label for="31">31</label>
                     </div>
                     <div class="red">
-                        <input type="radio" name="nummer" id="34" value="34">
+                        <input type="radio" id="34" value="34">
                         <label for="34">34</label>
                     </div>
                 </div>

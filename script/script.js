@@ -23,35 +23,59 @@ let feedback = document.getElementById('feedback'); //feedback of je het juiste 
 let inzet = document.getElementById('inzet'); //het inputveld van je inzet
 let winst = document.getElementById('winst'); //je winst of verlies
 
+let getallen = document.querySelectorAll('input[type="radio"]'); //alle getallen in een array
+let setCheck;
+
+for (let i=0; i<getallen.length; i++) { //loop door deze array heen
+
+        function uncheck() { 
+            if (setCheck != this){ //check of de radio button al gecheckt is
+            setCheck = this;
+        } else {
+            this.checked = false;
+            setCheck= null;
+        };
+    };
+
+    getallen[i].addEventListener('click', uncheck);
+};
+
+
 
 function play() {
-    let getallen = document.querySelector('input[name="nummer"]:checked').value; //check welk cijfer je hebt gekozen
+    let selected = []; //lege array waar alle selected inputs in komen
     let saldovalue = current_saldo.textContent; //check hoeveel saldo er nu is
     let krijgValue = Number(saldovalue); //zet dit om naar een number/integer
     let saldoOphoog = parseInt(saldo_input.value); //check hoeveel er is ingevuld
     
+    for (let i=0; i<getallen.length; i++) {
+        if (getallen[i].checked) { //de inputs die gecheckt zijn
+            selected.push(parseInt(getallen[i].value)); //komen in de selected array
+        };
+
+
+    };
+
     if (inzet.value == "0" || current_saldo.textContent == "0") { //check eerst of er wel geld is ingezet of dat je wel genoeg saldo hebt
         alert("Zet eerst iets in voordat je kan spelen!");
-    } else if(parseInt(inzet.value) > parseInt(current_saldo.textContent)){ //als je inzet meer is dan actuele saldo kan je niet spelen
+    } else if (parseInt(inzet.value) > parseInt(current_saldo.textContent)) {//als je inzet meer is dan actuele saldo kan je niet spelen
         alert('Je kan niet meer inzetten dan je huidige saldo!');
     } else {
         let valtopnummer = Math.floor(Math.random() * 37); //het willekeurige nummer wordt hier gegenereerd
         uitkomst.innerHTML = valtopnummer; //laat dit nummer zien
-        if (getallen == valtopnummer) { //check of je gekozen nummer overeenkomt met het gegenereede nummer
-            feedback.innerHTML = "goed!"; //geef feedback
-            feedback.style.cssText = "color: green;" //verander de kleur naar groen
-            winst.innerHTML = "+" + inzet.value * 36; //zet je inzet om naar winst en laat dit zien
-            let krijgWinstValue = parseInt(winst.innerHTML); //zet dit om naar een getal
-            current_saldo.innerHTML = krijgValue + krijgWinstValue; //tel de winst op bij je saldo
-        } else { //als je gekozen nummer niet overeenkomt
-            feedback.innerHTML = "fout!"; //geef feedback
-            feedback.style.cssText = "color: red;" //verander de kleur naar rood
-            winst.innerHTML = "-" + inzet.value; //laat je verlies zien
-            current_saldo.innerHTML = krijgValue - parseInt(inzet.value); //haalt je inzet van je saldo af
-        }
-
-    }
-
+            if (selected.includes(valtopnummer)) {
+                feedback.innerHTML = "goed!"; //geef feedback
+                feedback.style.cssText = "color: green;" //verander de kleur naar groen
+                winst.innerHTML = "+" + inzet.value * (36 / selected.length); //zet je inzet om naar winst en laat dit zien. Ligt eraan hoeveel getallen je hebt geselecteerd hoe groot de factor wordt
+                let krijgWinstValue = parseInt(winst.innerHTML); //zet dit om naar een getal
+                current_saldo.innerHTML = krijgValue + krijgWinstValue; //tel de winst op bij je saldo
+            } else {
+                feedback.innerHTML = "fout!"; //geef feedback
+                feedback.style.cssText = "color: red;" //verander de kleur naar rood
+                winst.innerHTML = "-" + inzet.value; //laat je verlies zien
+                current_saldo.innerHTML = krijgValue - parseInt(inzet.value); //haalt je inzet van je saldo af
+            };
+    };
 };
 
 speelbutton.addEventListener('click', play); //als je op de button klikt wordt bovenstaande functie uitgevoerd.
@@ -88,3 +112,18 @@ function audioPause() {
 playAudio.addEventListener('click', audioPlayCasino); //als je hierop klikt speelt audio af
 playAudioMix.addEventListener('click', audioPlayMix); //als je hierop klikt speelt audio af
 pause.addEventListener('click', audioPause); //als je hierop klikt pauzeert audio
+
+
+const fiche = document.getElementById("fiche1Label");
+
+function addAnimation() {
+    fiche.classList.add('animationRotate');
+
+    setTimeout(function removeAnimation(){
+        fiche.classList.remove('animationRotate');
+    }, 3100);
+};
+
+fiche.addEventListener('click', addAnimation);
+
+
